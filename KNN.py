@@ -4,7 +4,7 @@ import gzip
 import io
 import os
 
-PATH_TO_FASHION_MNIST = 'C:\\Users\\Jay Patel\\OneDrive\\Desktop\\ImageTesting\\Fashion_MNIST'
+PATH_TO_FASHION_MNIST = 'C:\\Users\\Jay Patel\\OneDrive\\Desktop\\ImageTesting'
 
 train_idx3 = os.path.join(PATH_TO_FASHION_MNIST, 'train-images-idx3-ubyte (1).gz')
 x_train= gzip.open(train_idx3)
@@ -117,8 +117,7 @@ def main(x_train,y_train,x_test,y_test):
                 7:	"Sneaker",
                 8:	"Bag",
                 9:	"Ankle boot" }
-    total=0
-    correct=0
+    total,correct=0,0
     for i in range(len(x_test)):
         img=x_test[i]
         my_ans=knn(x_train,img,y_train,191)
